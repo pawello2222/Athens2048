@@ -1,4 +1,4 @@
-package src;
+package com.athens.athens2048;
 public class DuoTuple<X, Y> {
 	public final X x;
 	public final Y y;

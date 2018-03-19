@@ -1,4 +1,4 @@
-package src;
+package com.athens.athens2048;
 import java.util.Random;
 import java.util.ArrayList;
 
