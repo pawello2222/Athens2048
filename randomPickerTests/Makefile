@@ -1,8 +1,9 @@
 SRC = 	src/Main.java \
 		src/RandomPicker.java \
+		src/DuoTuple.java \
 
 all:
-	javac $(SRC)
+	javac -Xlint $(SRC)
 
-run:
+run: all
 	@java src/Main
