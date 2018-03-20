@@ -6,7 +6,9 @@ An international student take on Netherlands' National e-Sport
 4x4 Grid, obtain a 2048 tile, by merging those that have equal value.
 
 (0, 0)|(1, 0)|...|(0, n)
--|-|-
+
+-|-|-|-
+
 ...|...|(i + 1, j - 1)|...
 (i -1, j)|(i, j)|(i + 1, j)|...
 (n, 0)|...|...|(n, n)
@@ -24,7 +26,7 @@ If i, i+1 values are equal, MERGE
 ## Merging
 
 LEFT|RIGHT|UP|DOWN
--|-|-
+-|-|-|-
 val(i-1, j) = val(i,j)+val(i-1, j)|val(i+1, j) = val(i,j)+val(i+1, j)|val(i, j+1) = val(i,j)+val(i, j + 1)|val(i, j-1) = val(i,j)+val(i, j-1)
 
 
