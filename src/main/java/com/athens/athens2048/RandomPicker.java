@@ -40,7 +40,6 @@ public class RandomPicker{
         return new DuoTuple<>(x, y);
     }
 
-	public du
 	// Look for a Cell with the given coordinates
 	public int findTile(int x, int y){
 		int size = freeTiles.size();
