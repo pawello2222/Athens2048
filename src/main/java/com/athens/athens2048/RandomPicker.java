@@ -12,7 +12,7 @@ public class RandomPicker{
 	public RandomPicker(int width, int height){
 		this.width =  width;
 		this.height = height;
-		this.freeCells = new ArrayList<DuoTuple<Integer,Integer>>();
+		this.freeCells = new ArrayList<>();
 		this.rand = new Random();
 	}
 
@@ -22,7 +22,7 @@ public class RandomPicker{
 			return;
 
 		if(findCell(x, y) == -1){
-			freeCells.add(new DuoTuple<Integer, Integer>(x, y));
+			freeCells.add(new DuoTuple<>(x, y));
 		}
 	}
 
@@ -34,7 +34,7 @@ public class RandomPicker{
 		return freeCells.get(rand.nextInt(size));
 	}
 
-	// Look for a Cel with the given coordinates
+	// Look for a Cell with the given coordinates
 	public int findCell(int x, int y){
 		int size = freeCells.size();
 		for (int i = 0; i < size; i++) {
