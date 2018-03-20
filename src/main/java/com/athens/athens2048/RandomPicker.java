@@ -5,41 +5,41 @@ import java.util.ArrayList;
 public class RandomPicker{
 	private final int width;
 	private final int height;
-	private ArrayList<DuoTuple<Integer,Integer>> freeCells;
+	private ArrayList<DuoTuple<Integer,Integer>> freeTiles;
 	private Random rand;
 
 	// RandomPicker constructor
 	public RandomPicker(int width, int height){
 		this.width =  width;
 		this.height = height;
-		this.freeCells = new ArrayList<>();
+		this.freeTiles = new ArrayList<>();
 		this.rand = new Random();
 	}
 
 	// Add a Cell to the picker's list with to given coordinates
-	public void addFreeCell(int x, int y){
+	public void addFreeTile(int x, int y){
 		if(x >= width || y >= height)
 			return;
 
-		if(findCell(x, y) == -1){
-			freeCells.add(new DuoTuple<>(x, y));
+		if(findTile(x, y) == -1){
+			freeTiles.add(new DuoTuple<>(x, y));
 		}
 	}
 
 	// Pick randomly a Cell among the ones listed in picker's list
-	public DuoTuple<Integer,Integer> pickRandomFreeCell(){
-		int size = freeCells.size();
+	public DuoTuple<Integer,Integer> pickRandomFreeTile(){
+		int size = freeTiles.size();
 		if(size == 0) return null;
 		// Pick a cell at a random index between 0 included and size excluded
-		return freeCells.get(rand.nextInt(size));
+		return freeTiles.get(rand.nextInt(size));
 	}
 
 	// Look for a Cell with the given coordinates
-	public int findCell(int x, int y){
-		int size = freeCells.size();
+	public int findTile(int x, int y){
+		int size = freeTiles.size();
 		for (int i = 0; i < size; i++) {
-			if(freeCells.get(i).x == x){
-				if(freeCells.get(i).y == y){
+			if(freeTiles.get(i).x == x){
+				if(freeTiles.get(i).y == y){
 					return i;
 				}
 			}
@@ -48,17 +48,21 @@ public class RandomPicker{
 	}
 
 	// Debug method to print picker's list content
-	public void printFreeCells(){
-		System.out.println(freeCells.toString());
+	public void printFreeTiles(){
+		System.out.println(freeTiles.toString());
 	}
 
-	// Remove the Cell with the given coordinates
+	// Remove the Tile with the given coordinates
 	// Will do nothing if it does not exist
-	public void removeFreeCell(int x, int y){
-		int pos = findCell(x, y);
+	public void removeFreeTile(int x, int y){
+		int pos = findTile(x, y);
 		if(pos > -1){
-			freeCells.remove(pos);
+			freeTiles.remove(pos);
 		}
 	}
+
+	public int freeTilesCount(){
+	    return freeTiles.size();
+    }
 
 }
