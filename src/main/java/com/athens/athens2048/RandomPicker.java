@@ -34,6 +34,12 @@ public class RandomPicker{
 		return freeTiles.get(rand.nextInt(size));
 	}
 
+    public DuoTuple<Integer,Integer> dumbPickRandomFreeTile(){
+        int x = rand.nextInt(width);
+        int y = rand.nextInt(height);
+        return new DuoTuple<>(x, y);
+    }
+
 	// Look for a Cell with the given coordinates
 	public int findTile(int x, int y){
 		int size = freeTiles.size();
