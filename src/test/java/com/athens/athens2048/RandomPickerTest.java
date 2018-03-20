@@ -41,5 +41,9 @@ public class RandomPickerTest    extends TestCase
         assertTrue( picker.freeTilesCount() == 1);
         picker.removeFreeTile(2, 3);
         assertTrue( picker.freeTilesCount() == 0);
+        RandomSelector randsel =  new RandomSelector();
+        for(int i = 0;  i < 50; i++){
+            System.out.println("Randomly picked : " + String.valueOf(randsel.getRandom()));
+        }
     }
 }
