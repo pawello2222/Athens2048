@@ -6,9 +6,7 @@ An international student take on Netherlands' National e-Sport
 4x4 Grid, obtain a 2048 tile, by merging those that have equal value.
 
 (0, 0)|(1, 0)|...|(0, n)
-
 -|-|-|-
-
 ...|...|(i + 1, j - 1)|...
 (i -1, j)|(i, j)|(i + 1, j)|...
 (n, 0)|...|...|(n, n)
