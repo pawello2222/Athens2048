@@ -10,11 +10,8 @@ public class NoCommand extends GameCommand implements Command {
         initialize(tiles, game);
     }
 
-    public boolean execute(){
+    public boolean execute(Tile[][] etiles, boolean updateScore){
         return false;
     }
 
-    public void undo(){
-
-    }
 }

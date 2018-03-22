@@ -64,6 +64,7 @@ class AppFrame extends JFrame implements GameOverListener {
 
         // Generates the game panels
         buildGameBoard();
+        game = new Game(this);
         startNewGame();
 
         // Add key listeners for Up/North/East/West keys
@@ -92,6 +93,22 @@ class AppFrame extends JFrame implements GameOverListener {
                 if (event.getKeyCode() == KeyEvent.VK_N) {
                     startNewGame();
                 }
+                if (event.getKeyCode() == KeyEvent.VK_R) {
+                    replayGame();
+                }
+                if (event.getKeyCode() == KeyEvent.VK_E) {
+                    game.replay();
+                }
+                if (event.getKeyCode() == KeyEvent.VK_U) {
+                    total_score = 0;
+                    game.undo();
+                    current_score.setText(Integer.toString(total_score));
+                }
+                if (event.getKeyCode() == KeyEvent.VK_Y) {
+                    total_score = 0;
+                    game.redo();
+                    current_score.setText(Integer.toString(total_score));
+                }
             }
 
             @Override
@@ -100,11 +117,17 @@ class AppFrame extends JFrame implements GameOverListener {
         });
     }
 
+    private void replayGame(){
+        total_score = 0;
+        game.resetTurnIndex();
+        current_score.setText(Integer.toString(total_score));
+    }
+
     private void startNewGame() {
         total_score = 0;
-        current_score.setText(Integer.toString(total_score));
-        game = new Game(this);
+        game.reset();
         game.addGameOverListener(this);
+        current_score.setText(Integer.toString(total_score));
     }
 
     /**
