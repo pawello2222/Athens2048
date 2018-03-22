@@ -3,7 +3,7 @@ package com.athens.athens2048.core;
 
 public class Tile {
     /**
-     * Represents a single tile on the board.
+     * Represents a single tile on the Board.
      */
 
     private int number;

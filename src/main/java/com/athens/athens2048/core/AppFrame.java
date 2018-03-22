@@ -33,15 +33,15 @@ class AppFrame extends JFrame implements GameObserver {
      * Variables for the commands instructions
      */
     private JLabel keyTText = new JLabel("Press T to change the game theme");
-    private JLabel keyUText = new JLabel("Press U to undo the move");
-    private JLabel keyYText = new JLabel("Press Y to redo the move");
-    private JLabel keyNText = new JLabel("Press N to restart the game");
-    private JLabel keyEText = new JLabel("Press E to see next move (playback mode)");
-    private JLabel keyRText = new JLabel("Press R to enter the playback mode");
+    private JLabel keyUText = new JLabel("Press U to undo a move");
+    private JLabel keyYText = new JLabel("Press Y to redo a move");
+    private JLabel keyEText = new JLabel("Press E to jump to the most recent move");
+    private JLabel keyRText = new JLabel("Press R to rewind game to the beginning");
+    private JLabel keyNText = new JLabel("Press N to start a new game");
     private JLabel keyCommands = new JLabel("Instructions:");
 
     /**
-     * Theme variables of the game board - default: Day theme
+     * Theme variables of the game Board - default: Day theme
      */
     private final int NIGHT = 1;
     private final int DAY = 0;
@@ -64,7 +64,7 @@ class AppFrame extends JFrame implements GameObserver {
     private JButton[][] gameTile = new JButton[max_tiles][max_tiles];
 
     AppFrame() {
-        // Set JFrame properties for the game board
+        // Set JFrame properties for the game Board
         this.setTitle("2048 by ATHENS March 2018");
         this.setSize(800, 600);
         this.setLayout(null);
@@ -173,7 +173,7 @@ class AppFrame extends JFrame implements GameObserver {
         commandsPanel.add(keyNText);
         commandsPanel.add(keyRText);
         commandsPanel.add(keyEText);
-        commandsPanel.setBounds(leftBorder + gameTitleBorder + max_tiles*100 + max_tiles*15 + 20, 280, 240, 170);
+        commandsPanel.setBounds(leftBorder + gameTitleBorder + max_tiles*100 + max_tiles*15 + 20, 280, 280, 170);
 
         keyCommands.setFont(new Font("Arial", Font.BOLD, 15));
         keyTText.setFont(new Font("Arial", Font.PLAIN, 12));
@@ -215,10 +215,10 @@ class AppFrame extends JFrame implements GameObserver {
                     gameController.startGame();
                 }
                 if (event.getKeyCode() == KeyEvent.VK_R) {
-                    gameController.replayGame();
+                    gameController.backToFirstStage();
                 }
                 if (event.getKeyCode() == KeyEvent.VK_E) {
-                    gameController.replayStep();
+                    gameController.backToLastMove();
                 }
                 if (event.getKeyCode() == KeyEvent.VK_U) {
                     gameController.undoStep();
