@@ -1,6 +1,6 @@
 # Design pattern implementation <a id="DP"></a>
 
-This game uses Singleton, Strategy, Observator and Command patterns.
+This game uses Singleton, Strategy, Observator, Command and MVC patterns.
 
 *Decoration pattern* wasn't used, because it would have no use for our game. The most obvious added functionalities of 2048 are:
 - possibility to change grid's size
@@ -44,3 +44,8 @@ Pressing `r` restarts the scenario at the begining, pressing `e` steps through t
 
 We also used it to implement undo/redo feature.
 Pressing `u` will undo last move, pressing `y` will redo last undone move.
+
+
+## MVC<a id="MVC"></a>
+
+Model view controller pattern allowed to separate responsibility of tasks in the game: movement management, GUI display, computations of changes in the board following user's input.

@@ -17,6 +17,7 @@ Athens2048
   * [Strategy](./doc/DPimpl.md/#Strategy)
   * [Observator](./doc/DPimpl.md/#Observator)
   * [Command](./doc/DPimpl.md/#Command)
+  * [MVC](./doc/DPimpl.md/#MVC)
 
 ***
 
